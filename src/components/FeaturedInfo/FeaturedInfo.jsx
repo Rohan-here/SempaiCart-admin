@@ -20,12 +20,13 @@ const FeaturedInfo = () => {
         }
         getIncome();
     },[])
+    console.log(income)
     return (
         <div className="featured">
             <div className="featuredItem">
                 <span className="featuredTitle">Revenue</span>
                 <div className="featuredMoneyContainer">
-                    <span className="featuredMoney">Rs. {income[1].total}</span>
+                    <span className="featuredMoney">Rs. {income[1]?.total}</span>
                     <span className="featuredMoneyRate">
                         {Math.floor(percentage)} %
                         {
