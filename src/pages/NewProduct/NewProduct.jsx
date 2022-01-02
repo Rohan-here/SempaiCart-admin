@@ -1,10 +1,12 @@
 import { useState } from "react";
 import "./NewProduct.css"
 import {getStorage,ref,getDownloadURL,uploadBytesResumable} from "firebase/storage"
-import app from "../../firebase"
+
 import { addProducts } from "../../redux/apiCalls";
 import { useDispatch } from "react-redux";
-const NewProduct = () => {
+
+
+const NewProduct = ({firebaseApp}) => {
 
     const [inputs , setInputs] = useState({});
     const [file,setFile] = useState(null);
@@ -27,7 +29,7 @@ const NewProduct = () => {
     const handleClick = (e) =>{
       e.preventDefault();
       const fileName = new Date().getTime() + file.name;
-      const storage = getStorage(app);
+      const storage = getStorage(firebaseApp);
       const StorageRef = ref(storage,fileName);
       const uploadTask = uploadBytesResumable(StorageRef, file);
       uploadTask.on('state_changed', 
