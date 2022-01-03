@@ -55,13 +55,11 @@ const AddProduct = ({firebaseApp}) => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             const product = {...inputs,img : downloadURL , ...options};
             console.log(product);
-            userRequest.post('' , {product})
+            userRequest.post('product' , {product})
         });
       });
     }
 
-    console.log(file);
-    console.log(options)
     return (
         <div className="newProduct">
           <h1 className="addProductTitle">New Product</h1>
