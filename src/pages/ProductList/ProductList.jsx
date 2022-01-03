@@ -3,7 +3,7 @@ import { DataGrid } from '@material-ui/data-grid';
 import {DeleteOutline} from "@material-ui/icons"
 // import { productRows } from "../../dummyData";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { useDispatch,useSelector } from "react-redux";
 import { deleteProducts, getProducts } from "../../redux/apiCalls";
 
@@ -67,6 +67,9 @@ const columns = [
 
     return (
         <div className="productList">
+            <Link to="/addProduct">
+                <button className="productAddButton">Add Product</button>
+            </Link>
             <DataGrid
                 rows={products}
                 columns={columns}

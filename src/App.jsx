@@ -17,6 +17,7 @@ import ProductList from "./pages/ProductList/ProductList";
 import NewProduct from "./pages/NewProduct/NewProduct";
 import Product from "./pages/Product/Product"
 import Login from "./pages/Login/Login"
+import AddProduct from "./pages/AddProduct/AddProduct";
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
@@ -67,6 +68,9 @@ function App() {
               </Route>
               <Route path="/newProduct">
                 <NewProduct firebaseApp = {app}/>
+              </Route>
+              <Route path="/addProduct">
+                <AddProduct firebaseApp = {app}/>
               </Route>
           </div>
           </>

@@ -2,7 +2,7 @@ import "./Product.css"
 import { Link, useLocation } from "react-router-dom";
 import { userRequest } from "../../requests";
 import Chart from "../../components/Chart/Chart"
-import {productData} from "../../dummyData"
+
 import { Publish } from "@material-ui/icons";
 import { useSelector } from "react-redux";
 import { useState,useMemo,useEffect } from "react";
