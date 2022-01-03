@@ -53,9 +53,9 @@ const AddProduct = ({firebaseApp}) => {
         (error) => {  }, 
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            const product = {...inputs,img : downloadURL , ...options};
+            const product = {...inputs , price :parseInt(inputs.price) ,img : downloadURL , ...options};
             console.log(product);
-            userRequest.post('product' , {product})
+            userRequest.post('products' , product)
         });
       });
     }
