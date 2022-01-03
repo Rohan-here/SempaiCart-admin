@@ -34,7 +34,7 @@ const app = initializeApp(firebaseConfig);
 
 
 function App() {
-    const admin = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin;
+    const admin = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin || false;
 
     return ( 
       <Router>
