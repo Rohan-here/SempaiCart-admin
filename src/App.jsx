@@ -19,7 +19,7 @@ import Product from "./pages/Product/Product"
 import Login from "./pages/Login/Login"
 import AddProduct from "./pages/AddProduct/AddProduct";
 import { initializeApp } from "firebase/app";
-
+import { useSelector } from "react-redux";
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -34,7 +34,7 @@ const app = initializeApp(firebaseConfig);
 
 
 function App() {
-    const admin = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin || false;
+  const admin = useSelector((state) => state.user.currentUser?.isAdmin) || false;
 
     return ( 
       <Router>
